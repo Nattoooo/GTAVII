@@ -15,7 +15,7 @@ html = html.replace('<link rel="stylesheet" href="game/style.css">', "<style>\n"
 pattern = r'<script defer src="([^"]+)"></script>'
 sources = []
 for path in re.findall(pattern, html):
-    content = (root / path).read_text().replace("</script", "<\\/script")
+    content = (root / path.partition("?")[0]).read_text().replace("</script", "<\\/script")
     sources.append("<script>\n" + content + "\n</script>")
 html = re.sub(pattern, "", html).replace("</body>", "\n".join(sources) + "\n</body>")
 args.output.write_text(html)
