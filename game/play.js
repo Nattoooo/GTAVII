@@ -10,7 +10,7 @@ const game={
     cam:{x:0,y:0,z:0,right:[0,0,0],up:[0,0,0],forward:[0,0,0],fov:1.05,yaw:-Math.PI/2},
     get player(){return this.car||this.walker;},
     get jobId(){return this.replayId??save.job;},
-    get job(){return this.story?JOBS[this.jobId]:null;},,
+    get job(){return this.story?JOBS[this.jobId]:null;},
     get stage(){return this.job?.stages[this.step];},
     get objective(){
         if(this.fare)return this.fare.onboard?this.fare.drop:this.fare.pick;
