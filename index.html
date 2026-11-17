@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#211b27">
+<meta name="description" content="Drive Liberty City after hours in an original single-player open-world fan game.">
+<title>GTA VII · Liberty City After Hours</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='15' fill='%23251e29'/%3E%3Cpath d='m12 19 9 43h11l21-43H41L28 48l-4-29zm44 0L42 62h10l14-43zm13 0L55 62h9l14-43z' fill='%23ffc27f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="game/style.css">
+<script defer src="assets/city.js"></script>
+<script defer src="game/streets.js"></script>
+<script defer src="game/renderer.js"></script>
+<script defer src="game/sound.js"></script>
+<script defer src="game/play.js"></script>
+<script defer src="game/ui.js"></script>
+</head>
+<body>
+<main id="stage">
+<canvas id="world" aria-label="Third-person Liberty City game world" tabindex="-1"></canvas>
+<section id="title" class="cover">
+    <header class="coverTop"><div class="brand">GTA <i>VII</i></div><span class="edition">Single-player fan game</span></header>
+    <div class="coverText">
+        <h1>Liberty<br>City<span class="scriptTitle">After Hours</span></h1>
+        <div class="coverActions"><button class="primary" id="start" disabled>Loading city…</button><button class="quiet" data-open="controls">Controls</button></div>
+        <p id="loadMessage" role="status"></p>
+    </div>
+    <footer class="coverFoot"><span class="signalIcon"><b></b><b></b><b></b><b></b></span> Crown FM <span>88.3</span></footer>
+</section>
+<section id="hud" hidden>
+    <div class="dispatch glass"><div class="kicker" id="dispatchLabel">Crown dispatch</div><strong id="jobName"></strong><p id="objective"></p></div>
+    <div class="wallet glass"><strong id="money">$0</strong><span id="heat"></span></div>
+    <div class="mapHud"><button id="openMap" title="Open street map (M)" aria-label="Open street map"><canvas id="radar" width="224" height="156"></canvas><span class="mapKey">M</span></button><div id="district"></div></div>
+    <div id="dial"><div id="radio"></div><div class="speed"><span id="speed"></span><small id="unit">MPH</small></div><div id="vehicle"></div></div>
+    <div id="context"></div><div id="ticker" role="status"></div><div id="countdown"></div>
+    <button id="pauseIcon" aria-label="Pause game">Ⅱ</button>
+    <div id="touch">
+        <div><button data-key="KeyA" aria-label="Turn left">◀</button><button data-key="KeyD" aria-label="Turn right">▶</button></div>
+        <div><button data-key="KeyF">F</button><button data-key="KeyE">E</button><button data-key="KeyS" aria-label="Brake or reverse">▼</button><button data-key="KeyW" aria-label="Accelerate or walk forward">▲</button></div>
+    </div>
+</section>
+<div class="shade" id="veil" hidden>
+    <section class="sheet" id="panel" role="dialog" aria-modal="true" aria-labelledby="panelTitle">
+        <div class="sheetHeader"><div><div class="kicker" id="panelKicker"></div><h2 id="panelTitle"></h2></div><button id="close" class="close" aria-label="Close">×</button></div>
+        <div id="panelBody"></div>
+    </section>
+</div>
+<noscript>Enable JavaScript to play Liberty City After Hours.</noscript>
+</main>
+</body>
+</html>
